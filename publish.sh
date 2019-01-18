@@ -11,4 +11,3 @@ temp=`echo $url | sed 's/\\\\\//\//g' | sed 's/[{}]//g' | awk -v k="text" '{n=sp
 # https://www.netlify.com/docs/api/#deploys
 echo "Publishing build ${temp##*|}..."
 curl -X POST -H "Authorization: Bearer NETLIFY_PUBLIC_KEY" -d "{}" "https://api.netlify.com/api/v1/sites/wonderful-meitner-32d11e/deploys/${temp##*|}/restore"
-Step 4
